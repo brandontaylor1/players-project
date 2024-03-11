@@ -12,12 +12,22 @@ const PlayerCard = ({player}) => {
                 </div>
                     <div className="player-info">
                         <h1>{full_name}</h1>
-                        <p>{position} #{number}</p>
+                    <div className="player-position-wrapper">
+                        <p>{position}</p>
+                        <p># {number}</p>
                     </div>
-                    <h3>{team}</h3>
-                    <p>HT: {height} WT: {weight}</p>        
-                    <p>Age: {age} Exp: {years_experience}</p>
-                    <p>College: {college}</p>   
+                    </div>
+                    <div className="player-stats-wrapper">
+                        <div className="player-stats">
+                            <h2>{team}</h2>
+                            <p>HT: {height} WT: {weight}</p>        
+                            <p>Age: {age} Exp: {years_experience}</p>
+                            <p>College: {college}</p>   
+                        </div>
+                       <div>
+                            <img src='../../src/assets/Tennessee_Titans_logo.png' alt='titanslogosmall' />
+                       </div> 
+                    </div>
             </div>
     )
 }

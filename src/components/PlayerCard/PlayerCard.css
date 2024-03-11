@@ -6,18 +6,26 @@
 
 .player-card {
     padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
+    /* border: 1px solid #002C63; */
+    border-radius: 10px;
     margin: 10px;
     width: 25%;
-    background-color: whitesmoke;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: #002C63;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.player-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
 }
 
 .player-image {
     height: auto;
     width: 100%;
-    object-fit: cover;
+    border-radius: 10px;
+    object-fit: contain;
 }
 
 .player-list-container {
@@ -27,8 +35,26 @@
     flex-wrap: wrap;
 }
 
+.player-position-wrapper {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .player-info h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-top: 5px;
+}
+
+.player-info p {
+    font-size: 1.75rem;
 }
 
 #titans-logo {
@@ -37,4 +63,26 @@
     right: 0;
     width: 50rem;
     z-index: -10;
+}
+
+.player-stats h2 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+}
+
+.player-stats p {
+    font-size: 1rem;
+}
+
+.player-stats-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.player-stats-wrapper img {
+    height: auto;
+    width: 75px;
+    opacity: 0.5;
 }
