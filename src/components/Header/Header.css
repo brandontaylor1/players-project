@@ -1,8 +1,7 @@
 header {
-    height: 20vh;
+    height: 10vh;
     width: 100%;
-    background: black;
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: space-around;
