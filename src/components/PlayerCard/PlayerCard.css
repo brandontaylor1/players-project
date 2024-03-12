@@ -41,6 +41,10 @@
     justify-self: center;
 }
 
+.player-position-wrapper p {
+    font-size: 1.5vw;    
+}
+
 
 .player-info {
     display: flex;
@@ -49,12 +53,13 @@
 }
 
 .player-info h1 {
-    font-size: 2.5rem;
+    font-size: 2vw;
+    font-weight: 800;
     margin-top: 5px;
 }
 
 .player-info p {
-    font-size: 1.75rem;
+    font-size: 1.75vw;
 }
 
 #titans-logo {
@@ -65,13 +70,18 @@
     z-index: -10;
 }
 
+#titanslogosmall {
+    height: auto;
+    width: 4vw;
+}
+
 .player-stats h2 {
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     margin-top: -20px;
 }
 
 .player-stats p {
-    font-size: 1rem;
+    font-size: 1vw;
 }
 
 .player-stats-wrapper {

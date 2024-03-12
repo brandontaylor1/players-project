@@ -25,7 +25,7 @@ const PlayerCard = ({player}) => {
                             <p>College: {college}</p>   
                         </div>
                        <div>
-                            <img src='../../src/assets/Tennessee_Titans_logo.png' alt='titanslogosmall' />
+                            <img src='../../src/assets/Tennessee_Titans_logo.png' alt='titanslogosmall' id="titanslogosmall"/>
                        </div> 
                     </div>
             </div>
