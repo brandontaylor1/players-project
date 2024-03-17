@@ -3,6 +3,7 @@ import { Routes, Route, Router } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import IntroPage from './pages/IntroPage/IntroPage.jsx';
 import LoginPage from './pages/LoginPage/LoginPage.jsx';
+import TeamPage from './pages/TeamPage/TeamPage.jsx';
 import PlayersList from './components/PlayerCard/PlayersList.jsx';
 import SplashPage from './pages/SplashPage/SplashPage.jsx';
 import './App.css'
@@ -45,6 +46,15 @@ const App = () => {
               <TransitionGroup>
                 <CSSTransition key='login' classNames='fade' timeout={300} in={transition}>
                   <LoginPage />
+                </CSSTransition>
+              </TransitionGroup>
+            } />
+        <Route 
+            path='/teampage' 
+            element={
+              <TransitionGroup>
+                <CSSTransition key='teampage' classNames='fade' timeout={300} in={transition}>
+                  <TeamPage />
                 </CSSTransition>
               </TransitionGroup>
             } />
