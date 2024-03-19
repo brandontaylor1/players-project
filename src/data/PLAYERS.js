@@ -112,7 +112,11 @@ export const PLAYERS = [
         college: 'San Diego State',
         years_experience: '6',
         imageURL: 'https://static.clubs.nfl.com/image/private/t_landscape_tablet_2x/f_auto/titans/ideylurboacq8qcqksf1.jpg',
+    },
+    {
+        
     }
+  
 
 
 ]

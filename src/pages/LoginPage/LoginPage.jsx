@@ -13,8 +13,8 @@ const LoginPage = () => {
         resetForm(); 
     }
 
-    const handleTeamPageClick = () => {
-        navigate('/teampage')
+    const handleNextPageClick = () => {
+        navigate('/selector')
     }
 
     return (
@@ -28,7 +28,7 @@ const LoginPage = () => {
                 >
                 <div id="login-page-content">
                     <Form className="login-form">
-                        <h1>OLYMPUS</h1>
+                        <h1>OMNI</h1>
                         <h2>TITANS SCOUTING</h2>
                         <label htmlFor="email" id="loginEmail">Email </label><br />
                         <Field type="email" id="email" name="email" /><br />
@@ -38,7 +38,7 @@ const LoginPage = () => {
                         <Field type="password" id="password" name="password" /> <br />
                         <ErrorMessage name="password" component="div" />
 
-                        <button type="submit" onClick={handleTeamPageClick}>LOGIN</button> <br />
+                        <button type="submit" onClick={handleNextPageClick}>LOGIN</button> <br />
                         <button type="button">CREATE ACCOUNT</button>
                         <button type="button">FORGOT PASSWORD?</button>
                         <button type="button">VPN/HELP</button>

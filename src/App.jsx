@@ -1,14 +1,20 @@
 import { React, useState, useEffect } from 'react';
 import { Routes, Route, Router } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { PLAYERS } from './data/PLAYERS.js';
 import IntroPage from './pages/IntroPage/IntroPage.jsx';
 import LoginPage from './pages/LoginPage/LoginPage.jsx';
 import TeamPage from './pages/TeamPage/TeamPage.jsx';
 import PlayersList from './components/PlayerCard/PlayersList.jsx';
 import SplashPage from './pages/SplashPage/SplashPage.jsx';
+import SelectorPage from './pages/SelectorPage/SelectorPage.jsx';
+import TeamDetailPage from '../TeamDetailPage/TeamDetailPage.jsx';
+
 import './App.css'
 
 const App = () => {
+
+
 
   const [transition, setTransition] = useState(false);
   useEffect(() => {
@@ -18,6 +24,21 @@ const App = () => {
 
       return () => clearTimeout(transitionTimer)
     }, [])
+
+
+    const [cards, setCards] = useState(PLAYERS);
+
+    const handleDelete = (id) => {
+      const updatedCards = cards.filter((card) => card.id !== id);
+      setCards(updatedCards)
+      console.log('deleted: ', id)
+      console.log(updatedCards)
+    }
+
+    const filterByPosition = (position) => {
+      const filtered = cards.filter((card) => card.position === position)
+      setCards(filtered) 
+    }
 
   return (
     <>
@@ -50,6 +71,16 @@ const App = () => {
               </TransitionGroup>
             } />
         <Route 
+            path='/selector' 
+            element={
+              <TransitionGroup>
+                <CSSTransition key='selector' classNames='fade' timeout={300} in={transition}>
+                  <SelectorPage />
+                </CSSTransition>
+              </TransitionGroup>
+            } />
+
+        <Route 
             path='/teampage' 
             element={
               <TransitionGroup>
@@ -58,12 +89,25 @@ const App = () => {
                 </CSSTransition>
               </TransitionGroup>
             } />
+          <Route
+            path='/teampage/:teamId' 
+            element={
+              <TransitionGroup>
+                <CSSTransition key='teamDetails' classNames='fade' timeout={300} in={transition}>
+                  <TeamDetailPage />
+                </CSSTransition>
+              </TransitionGroup>
+            } />
         <Route 
             path='/players' 
             element={
               <TransitionGroup>
                 <CSSTransition key='players' classNames='fade' timeout={300} in={transition}>
-                  <PlayersList/>
+                  <PlayersList 
+                    players={cards} 
+                    filterByPosition={filterByPosition}
+                    handleDelete={handleDelete}
+                    />
                 </CSSTransition>
               </TransitionGroup>
             } />

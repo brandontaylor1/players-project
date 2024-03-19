@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selector-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selector-section h1 {
+    font-size: 8vw;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    color: #002C63;
+
+}
+
+.selector-selection h2 {
+    font-size: 2vw;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    color: #002C63;
+    margin: 5rem 0;
+}
+
+.selector-container {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+}
+
+.selector-container button {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem 4rem;
+    margin: 1rem;
+    border-radius: 20px;
+
+}
+
+.selector-image-container {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+#loginTitans {
+    width: 20%;
+    height: auto;
+}
+
+#loginNFL {
+    width: 15%;
+    height: auto;
+}
