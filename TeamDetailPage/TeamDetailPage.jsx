@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams} from "react-router-dom";
+import './TeamDetailPage.css';
 
 const TeamDetailPage = () => {
     const navigate = useNavigate();
     const { teamId } = useParams();
+
+    const handlePlayersClick = () => {
+        navigate(`/teampage/${teamId}/players`)
+    }
 
     const [team, setTeam] = useState({});
     const [loading, setLoading] = useState(true);
@@ -46,19 +51,25 @@ if(loading) return <h1>Loading...</h1>
 if(error) return <h1>Something went wrong! {error}</h1>
 
 const backgroundColor = `#${team.team.color}`;
-console.log(backgroundColor);
   
     return (
         <section className="team-detail-section" style={{backgroundColor}}>
-            <h1>Team Detail Page</h1>
-            <h2>{team.coach[0].firstName} {team.coach[0].lastName}</h2>
-            <h2>{team.team.displayName}</h2>
-            <h2>{team.team.clubhouse}</h2>
-            <h2>{team.team.abbreviation}</h2>
-            <h2>{team.season.year}</h2>
-            {/* <img src={team.logos[0].href} alt="team-logo" /> */}
-            <button onClick={() => navigate('/teampage')}>Back to Teams</button>
+            <header>
+                <img src={team.team.logo} alt="team-logo" />
+                <div>
+                    <h1>{team.team.displayName.toUpperCase()}</h1>
+                    <h2>Head Coach: {team.coach[0].firstName} {team.coach[0].lastName}</h2>
+                    <h3>{team.season.year} Record: {team.team.recordSummary}</h3>
+                    <h3>{team.team.standingSummary}</h3>
+                </div>
+            <div className="button-container">
+                <button onClick={handlePlayersClick}>Players</button>
+                <button onClick={() => navigate('/teampage')}>Back to Teams</button>
+            </div>    
+            </header>
         </section>
+
+
     )
 } 
 

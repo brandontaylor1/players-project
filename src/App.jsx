@@ -9,6 +9,7 @@ import PlayersList from './components/PlayerCard/PlayersList.jsx';
 import SplashPage from './pages/SplashPage/SplashPage.jsx';
 import SelectorPage from './pages/SelectorPage/SelectorPage.jsx';
 import TeamDetailPage from '../TeamDetailPage/TeamDetailPage.jsx';
+import PlayersPage from './pages/PlayerPage/PlayersPage.jsx';
 
 import './App.css'
 
@@ -98,6 +99,17 @@ const App = () => {
                 </CSSTransition>
               </TransitionGroup>
             } />
+          <Route
+            path='/teampage/:teamId/players' 
+            element={
+              <TransitionGroup>
+                <CSSTransition key='teamplayers' classNames='fade' timeout={300} in={transition}>
+                  <PlayersPage />
+                </CSSTransition>
+              </TransitionGroup>
+            } />
+
+
         <Route 
             path='/players' 
             element={
